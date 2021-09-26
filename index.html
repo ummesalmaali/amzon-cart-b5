@@ -70,7 +70,7 @@
                             <button class="page-link" onclick="decreaseNumber()"><i class="fas fa-minus"></i></button>
                           </li>
                           <li class="page-item">
-                            <input type="text" class="page-link" value="1" id="textbox"></input>
+                            <input type="text" class="page-link" value="0" id="textbox"></input>
                           </li>
                           <li class="page-item">
                             <button class="page-link" onclick="increaseNumber()"><i class="fas fa-plus"></i></button>
@@ -129,13 +129,13 @@
                       <div class="col-6">
                         <ul class="pagination justify-content-end set_quantity">
                           <li class="page-item">
-                            <button class="page-link" onclick="decreaseNumber()"><i class="fas fa-minus"></i></button>
+                            <button class="page-link" onclick="decreaseNumberSecond()"><i class="fas fa-minus"></i></button>
                           </li>
                           <li class="page-item">
-                            <input type="text" name="number" class="page-link" value="1" id="textbox"></input>
+                            <input type="text" name="number" class="page-link" value="0" id="textbox1"></input>
                           </li>
                           <li class="page-item">
-                            <button class="page-link"><i class="fas fa-plus" onclick="increaseNumber()"></i></button>
+                            <button class="page-link"><i class="fas fa-plus" onclick="increaseNumberSecond()"></i></button>
                           </li>
                         </ul>
                       </div>
@@ -211,9 +211,64 @@
         </div>
       </div>
     </div>
+    <script>
+                  const decreaseNumber = () => {
+            
+              let inputNumber = document.getElementById("textbox");
+              if(inputNumber.value <= 0){
+                inputNumber.value = 0;
+            }else{
+              inputNumber.value = parseInt(inputNumber.value) - 1;
+              inputNumber.style.background = "#fff"
+                inputNumber.style.color = "black"
+            }
+                  }
+
+
+                  const increaseNumber = () => {
+            
+              let inputNumber = document.getElementById("textbox");
+              if(inputNumber.value >= 5){
+                inputNumber.value = 5;
+                alert("max 5 allowed")
+                inputNumber.style.background = "red"
+                inputNumber.style.color = "#fff"
+            }else{
+              inputNumber.value = parseInt(inputNumber.value) + 1;
+            }
+                  }
+
+                  //for the second card
+                  const decreaseNumberSecond = () => {
+            
+            let inputNumber = document.getElementById("textbox1");
+            if(inputNumber.value <= 0){
+              inputNumber.value = 0;
+          }else{
+            inputNumber.value = parseInt(inputNumber.value) - 1;
+            inputNumber.style.background = "#fff"
+              inputNumber.style.color = "black"
+          }
+                }
+
+
+                const increaseNumberSecond = () => {
+          
+            let inputNumber = document.getElementById("textbox1");
+            if(inputNumber.value >= 5){
+              inputNumber.value = 5;
+              alert("max 5 allowed")
+              inputNumber.style.background = "red"
+              inputNumber.style.color = "#fff"
+          }else{
+            inputNumber.value = parseInt(inputNumber.value) + 1;
+          }
+                }
+</script>
 
     <!-- optional javascript -->
     <!-- popper.js first and then bootstrap.js -->
+    <script src="/index.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -224,5 +279,7 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+  
+
   </body>
 </html>
